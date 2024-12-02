@@ -60,8 +60,8 @@ class Currency {
                 if (response.status === 200) {
                     response.json().then((data) => {
                         self.addToStore(self.currency_key, data.response.Valute)
+                        self.render();
                     });
-                    self.render();
                 }
                 self.removeLoader();
             }, (reason) => {
